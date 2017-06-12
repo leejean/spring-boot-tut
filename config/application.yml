@@ -9,9 +9,10 @@ spring:
     serialization:
       INDENT_OUTPUT: true
   data.mongodb:
-    host: 172.16.1.191
-    port: 27017
-    database: fcs
+    # host: 172.16.1.191
+    # port: 27017
+    # database: fcs
+    uri: mongodb://fcs:fcs@172.16.1.191:27017/fcs
 
 # JWT
 jwt:
