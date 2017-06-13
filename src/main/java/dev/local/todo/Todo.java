@@ -6,7 +6,7 @@ import org.springframework.data.annotation.Id;
 
 /**
  * Todo是一个领域对象（domain object）
- * Created by wangpeng on 2017/1/24.
+ * Created by jj on  2017/1/24.
  */
 @Data
 public class Todo {

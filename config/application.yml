@@ -15,6 +15,8 @@ spring:
     uri: mongodb://fcs:fcs@172.16.1.191:27017/fcs
 
 # JWT
+# 在header里面传递token  参数名字 Authorization
+# Authorization = tokenHead + token   -> "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsZWVqZWFuIiwiY3JlYXRlZCI6MTQ5NzMyMzExNDcyNSwiZXhwIjoxNDk3OTI3OTE0fQ.CcJ2q9zEKQLw1rkWCSiEUDu4nXvdxIwFRos9yoE8JZQYy0zzlzqatCj7bsi1d5rIWf5K_L-d73XhKXpE07e5jA"
 jwt:
   header: Authorization
   secret: mySecret
