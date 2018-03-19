@@ -21,7 +21,14 @@ public class AuthController {
 
     @Autowired
     private AuthService authService;
-
+    /**
+     * 创建token
+     * @author leejean <br>
+     * @Date 2018年3月19日 下午3:42:26<br>
+     * @param authenticationRequest
+     * @return
+     * @throws AuthenticationException
+     */
     @RequestMapping(value = "${jwt.route.authentication.path}", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(
             @RequestBody JwtAuthenticationRequest authenticationRequest) throws AuthenticationException{
@@ -30,7 +37,14 @@ public class AuthController {
         // Return the token
         return ResponseEntity.ok(new JwtAuthenticationResponse(token));
     }
-
+    /**
+     * 刷新token
+     * @author leejean <br>
+     * @Date 2018年3月19日 下午3:42:08<br>
+     * @param request
+     * @return
+     * @throws AuthenticationException
+     */
     @RequestMapping(value = "${jwt.route.authentication.refresh}", method = RequestMethod.GET)
     public ResponseEntity<?> refreshAndGetAuthenticationToken(
             HttpServletRequest request) throws AuthenticationException{
@@ -42,7 +56,14 @@ public class AuthController {
             return ResponseEntity.ok(new JwtAuthenticationResponse(refreshedToken));
         }
     }
-
+    /**
+     * 
+     * @author leejean <br>
+     * @Date 2018年3月19日 下午3:42:04<br>
+     * @param addedUser
+     * @return
+     * @throws AuthenticationException
+     */
     @RequestMapping(value = "${jwt.route.authentication.register}", method = RequestMethod.POST)
     public User register(@RequestBody User addedUser) throws AuthenticationException{
         return authService.register(addedUser);

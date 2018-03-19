@@ -12,7 +12,7 @@ spring:
     # host: 172.16.1.191
     # port: 27017
     # database: fcs
-    uri: mongodb://fcs:fcs@172.16.1.191:27017/fcs
+    uri: mongodb://yilijian:ylj19911013@ds161012.mlab.com:61012/leejean
 
 # JWT
 # 在header里面传递token  参数名字 Authorization
