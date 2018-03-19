@@ -57,7 +57,7 @@ public class AuthController {
         }
     }
     /**
-     * 
+     * http://127.0.0.1:8090/auth/register
      * @author leejean <br>
      * @Date 2018年3月19日 下午3:42:04<br>
      * @param addedUser
