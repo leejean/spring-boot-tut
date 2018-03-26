@@ -16,13 +16,23 @@ import javax.servlet.http.HttpServletRequest;
 
 @RestController
 public class AuthController {
+	/**
+	 * Authorization
+	 */
     @Value("${jwt.header}")
     private String tokenHeader;
 
     @Autowired
     private AuthService authService;
     /**
-     * 创建token
+     * http://127.0.0.1:8090/auth
+     * Headers:
+     * Content-Type:application/json;charset=utf-8
+     * Body raw:
+     *  {
+			"username":"yilijian",
+			"password":"123456"
+		}
      * @author leejean <br>
      * @Date 2018年3月19日 下午3:42:26<br>
      * @param authenticationRequest
@@ -38,7 +48,8 @@ public class AuthController {
         return ResponseEntity.ok(new JwtAuthenticationResponse(token));
     }
     /**
-     * 刷新token
+     * http://127.0.0.1:8090/refresh
+     * 
      * @author leejean <br>
      * @Date 2018年3月19日 下午3:42:08<br>
      * @param request
@@ -58,6 +69,14 @@ public class AuthController {
     }
     /**
      * http://127.0.0.1:8090/auth/register
+     * Headers:
+     * Content-Type:application/json;charset=utf-8
+     * Body raw:
+     *  {
+			"username":"yilijian",
+			"password":"123456",
+			"email":"123@163.com"
+		}
      * @author leejean <br>
      * @Date 2018年3月19日 下午3:42:04<br>
      * @param addedUser
